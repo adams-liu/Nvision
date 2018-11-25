@@ -48,19 +48,31 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }
 
+
+    }
+    Bitmap bitmap;
 @Override
+// requestCode is for the cancel, resultcode is for request camera storage
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 //        super.onActivityResult(requestCode,resultCode,data);
         if(resultCode !=RESULT_CANCELED) {
             if (requestCode == CAMERA_REQUEST) {
-                Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-                image.setImageBitmap(bitmap);
+                bitmap = (Bitmap) data.getExtras().get("data");
+                openActivityImage();
+
+
             }
 
         }
 
     }
+
+    public void openActivityImage(){
+    Intent intent = new Intent(this,Image_Page.class);
+    intent.putExtra("BitmapImage", bitmap);
+    startActivity(intent);
+    }
+
 
 }

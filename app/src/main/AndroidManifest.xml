@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.david.circle">
-    <!--<uses-permission android:name="android.permission.CAMERA" />-->
+
+    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-feature android:name="android.hardware.camera.anys"  android:required="true"/>
+
+    <uses-feature
+        android:name="android.hardware.camera.anys"
+        android:required="true" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Nvision"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -20,9 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".Credits" />
-        <activity android:name=".Camera"></activity>
+        <activity android:name=".Camera" />
+        <activity android:name=".Image_Page" />
+        <activity android:name=".Results"></activity>
     </application>
 
 </manifest>
